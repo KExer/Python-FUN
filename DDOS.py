@@ -5,9 +5,10 @@ from time import sleep
 URL = "http://counter5.01counter.com/private/contadorvisitasgratis.php?c=cc752f03e9eb758405927ce708942ebf"
 
 threads_count = 200
+requests_count = 0
 
 def requestPage(URL, threadNumber):
-    requests_count = 0
+    global requests_count
     while True:
         r = requests.get(URL)
         if r.status_code == 200:
